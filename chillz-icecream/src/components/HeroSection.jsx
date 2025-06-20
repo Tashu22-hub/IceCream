@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { cones } from "../data/Cone";
-import "../Styles/Hero.css";
+import "../styles/Hero.css";
 
 const Hero = ({ selectedCone, setSelectedCone }) => {
   const [animateCone, setAnimateCone] = useState(false);
