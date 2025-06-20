@@ -1,0 +1,268 @@
+/* ========== Base Styles ========== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Poppins';
+  transition: background 0.6s ease;
+  height: 80px;
+  width: 100%;
+  padding: 0 5vw;
+  z-index: 1000;
+  flex-wrap: wrap;
+  position: relative;
+ 
+}
+
+/* ========== Logo ========== */
+.logo img {
+  width: 89px;
+  height: 30.95px;
+}
+
+/* ========== Navigation Container ========== */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 40px;
+  width: 100%;
+}
+
+/* ========== Nav Links ========== */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 45px;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 33px;
+  color: #ffffff;
+  margin-left: 250px;
+}
+
+.nav-links li {
+  cursor: pointer;
+
+}
+
+/* Specific dimensions */
+.nav-links .home { width: 67px; height: 33px; }
+.nav-links .shop { width: 58px; height: 33px; }
+.nav-links .delivery { width: 94px; height: 33px; }
+.nav-links .contact { width: 93px; height: 33px; }
+
+/* ========== Order Button ========== */
+.order-button {
+  width: 325px;
+  height: 60px;
+  margin-left: 25px;
+  font-weight: 700;
+  font-size: 22px;
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 2px;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+/* .order-button:hover {
+  background-color: #ffffff;
+  color: #000000;
+} */
+
+/* ========== Burger Menu ========== */
+#menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  color: #ffffff;
+  cursor: pointer;
+  position: absolute;
+  right: 5vw;
+  top: 24px;
+  z-index: 1100;
+}
+
+/* ========== MEDIA QUERIES ========== */
+
+/* ≤600px: Phones */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    /* flex-wrap: wrap; */
+    height: auto;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .nav-links,
+  .order-button {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    margin-left:0px;
+    margin-right: 20px;
+  }
+  /* .nav-links li {
+    margin-left: 210px;
+  } */
+  
+
+  #menu-toggle:checked + .menu-icon + .nav .nav-links {
+    display: flex;
+  }
+
+  #menu-toggle:checked + .menu-icon + .nav .order-button {
+    display: block;
+  }
+
+  .nav-links {
+    gap: 15px;
+    font-size: 18px;
+  }
+
+  .order-button {
+    font-size: 16px;
+  }
+
+  .logo img {
+    margin-bottom: 10px;
+  }
+}
+
+/* Tablets Portrait */
+@media (min-width: 601px) and (max-width: 767px) {
+  .navbar {
+    padding: 0 4vw;
+    padding-bottom: 20px;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .nav-links,
+  .order-button {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    margin-top: 25px;
+    margin-left:0px;
+
+  }
+ 
+
+  #menu-toggle:checked + .menu-icon + .nav .nav-links {
+    display: flex;
+  }
+
+  #menu-toggle:checked + .menu-icon + .nav .order-button {
+    display: block;
+  }
+}
+
+/* Tablets Landscape */
+@media (min-width: 768px) and (max-width: 991px) {
+  .navbar {
+    padding: 0 3vw;
+  }
+
+  .nav {
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    gap: 40px;
+    font-size: 21px;
+  }
+
+  .order-button {
+    width: 280px;
+    font-size: 20px;
+    margin-left: 40px;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+}
+
+/* Laptops */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .navbar {
+    padding: 0 4vw;
+  }
+
+  .nav {
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    gap: 45px;
+    font-size: 22px;
+  }
+
+  .order-button {
+    width: 325px;
+    font-size: 22px;
+    margin-left: 80px;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+}
+
+/* Desktops */
+@media (min-width: 1200px) {
+  .navbar {
+    padding: 0 5vw;
+  }
+
+  .nav {
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    gap: 50px;
+    font-size: 22px;
+  }
+
+  .order-button {
+    width: 325px;
+    font-size: 22px;
+    margin-left: 120px;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+}

@@ -1,0 +1,284 @@
+.hero-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 60px/ 5vw; */
+  padding-left: 110px;
+  min-height: 100vh;
+  transition: background 0.6s ease;
+  font-family: "Poppins";
+  color: white;
+  gap: 40px;
+  overflow: hidden;
+  box-sizing: border-box;
+  /* margin-right: 40px; need to change  */
+}
+
+.hero-content {
+  flex: 1 1 600px;
+  max-width: 650px;
+}
+
+.icecream {
+  font-size: 160px;
+  font-weight: 400;
+  font-family: "Pacifico";
+  margin: 0px;
+  width: 548px;
+  height: 200px;
+  /* margin-top: 20px; */
+}
+
+.cone-title {
+  font-weight: 800;
+  font-size: 66px;
+  line-height: 1.1;
+  /* margin: 20px 0 10px; */
+  width: 573px;
+  height: 99px;
+}
+
+.cone-description {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.6;
+  text-transform: lowercase;
+  margin-bottom: 40px;
+  max-width: 100%;
+  width: 796px;
+  height: 171px;
+  /* margin-top: 30px; */
+  margin-bottom: 50px; 
+}
+
+.cone-buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+/* Wrapper for the thumbnail to support pseudo-element */
+/* Default state — all cones tilted */
+/* Outer wrapper to control hover/select effects */
+.cone-thumbnail-wrapper {
+  width: 137px;
+  height: 157px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+
+}
+
+/* Container that holds image + bucket */
+.cone-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+
+}
+
+/* Ice cream image: tilted by default */
+.cone-thumbnail {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  transform: rotate(-10deg);
+  transition: transform 0.3s ease;
+  position: relative;
+
+  z-index: 2;
+}
+
+/* Bucket border: always straight and sized with cone */
+.bucket-border {
+  position: absolute;
+  bottom: 0;
+  right: 15%;
+  width: 60%;
+  height: 40%;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  border-radius: 0 0 12px 12px;
+  pointer-events: none;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 1;
+}
+
+/* Straighten and scale both image & bucket on hover or if active */
+/* .cone-thumbnail-wrapper:hover .cone-inner,
+.cone-thumbnail-wrapper.active .cone-inner {
+  transform: scale(1.25);
+} */
+
+.cone-thumbnail-wrapper:hover .cone-thumbnail {
+  transform: rotate(-40deg);
+  transform: scale(1.25);
+}
+
+/* Fade inactive cones */
+.cone-thumbnail-wrapper.inactive {
+  opacity: 0.6;
+}
+
+
+.cone-image-wrapper {
+  flex: 1 1 400px;
+  max-width: 600px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-cone-img {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  object-fit: contain;
+  will-change: transform;
+}
+/* ========== Animations ========== */
+.animate-in {
+  animation: springIn 0.8s cubic-bezier(0.25, 1.5, 0.5, 1) forwards;
+  z-index: 2;
+}
+
+.animate-out {
+  animation: springOut 1s ease-in forwards;
+  z-index: 1;
+}
+
+/* Entry Animation — comes back from bottom-right with spring */
+@keyframes springIn {
+  
+  0% {
+    transform: translate(600px, 800px) scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Exit Animation — cone moves to bottom-right */
+@keyframes springOut {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(100px, 200px) scale(0.85);
+    opacity: 0;
+  }
+}
+
+
+
+/* ========== Responsive Design ========== */
+@media (max-width: 1024px) {
+  .icecream {
+    font-size: 100px;
+    text-align: center;
+  }
+
+  .cone-title {
+    font-size: 50px;
+    text-align: center;
+  }
+
+  .cone-description {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .cone-buttons {
+    justify-content: center;
+  }
+
+  .main-cone-img {
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    padding: 40px 30px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .icecream {
+    font-size: 72px;
+    width: 548px;
+    height: 120px;
+  }
+
+  .cone-title {
+    font-size: 36px;
+    height: 60px;
+
+  }
+
+  .cone-description {
+    font-size: 16px;
+    padding-right: 20px;
+    height: 100px;
+  }
+
+  .cone-thumbnail {
+    width: 100px;
+    /* height: 120px; */
+    display: flex;
+   
+
+  }
+
+  .main-cone-img {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .icecream {
+    font-size: 60px;
+  }
+
+  .cone-title {
+    font-size: 28px;
+  }
+
+  .cone-description {
+    font-size: 14px;
+  }
+
+  .cone-thumbnail {
+    width: 80px;
+    height: 100px;
+    flex-wrap: wrap;
+  }
+
+  .main-cone-img {
+    margin-top: 20px;
+    max-height: 250px;
+  }
+}
