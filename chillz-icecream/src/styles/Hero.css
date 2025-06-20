@@ -218,67 +218,90 @@
     max-height: 400px;
   }
 }
-
 @media (max-width: 768px) {
   .hero-container {
     flex-direction: column;
-    padding: 40px 30px;
+    padding: 30px 20px;
     align-items: center;
     text-align: center;
   }
 
+  .hero-content {
+    max-width: 90%;
+    padding: 0px 10px;
+    max-height: 60%;
+  }
+ 
   .icecream {
-    font-size: 72px;
-    width: 548px;
-    height: 120px;
+    font-size: 48px;
+    width: auto;
+    height: auto;
+    word-break: break-word;
+
   }
 
   .cone-title {
-    font-size: 36px;
-    height: 60px;
-
+    font-size: 26px;
+    width: auto;
+    height: auto;
+    word-break: break-word;
+    margin-bottom: 20px;
+    margin-top: 10px;
   }
 
   .cone-description {
-    font-size: 16px;
-    padding-right: 20px;
+    font-size: 14px;
+    width: auto;
+    height: auto;
+    /* margin-bottom: 30px; */
+    word-break: break-word;
+  }
+
+  .cone-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .cone-thumbnail-wrapper{
+    width: 90px;
     height: 100px;
   }
 
-  .cone-thumbnail {
-    width: 100px;
-    /* height: 120px; */
-    display: flex;
-   
-
+  .cone-image-wrapper {
+    max-width: 90%;
+    padding: 0;
   }
 
   .main-cone-img {
-    max-height: 300px;
+    max-width: 240px;
   }
 }
 
 @media (max-width: 480px) {
   .icecream {
-    font-size: 60px;
+    font-size: 36px;
   }
 
   .cone-title {
-    font-size: 28px;
+    font-size: 20px;
   }
 
   .cone-description {
-    font-size: 14px;
+    font-size: 12px;
+  }
+  .cone-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 
-  .cone-thumbnail {
+  .cone-thumbnail-wrapper {
     width: 80px;
-    height: 100px;
-    flex-wrap: wrap;
+    height: 60px;
   }
 
   .main-cone-img {
-    margin-top: 20px;
-    max-height: 250px;
+    max-width: 200px;
   }
 }
